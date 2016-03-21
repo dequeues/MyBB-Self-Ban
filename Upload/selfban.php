@@ -1,9 +1,8 @@
 <?php
 
-if(!defined("IN_MYBB"))
-{
-	die("Direct initialization of this file is not allowed.<br /><br />Please make sure IN_MYBB is defined.");
-}
+define('IN_MYBB', 1);
+
+require_once('./global.php');
 
 // if user is not logged in or the plugin is not enabled or allowed groups is empty, show no permission error
 if($mybb->user['uid'] == 0 || !isset($mybb->settings['selfban_enabled']) || $mybb->settings['selfban_enabled'] == '0' || empty($mybb->settings['selfban_groupsallowed']))
